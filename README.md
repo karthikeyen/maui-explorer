@@ -1,1 +1,1 @@
-# Maui-explorer : .Net Multi App Platform UI (MAUI) Explorer Application
+# Maui-explorer : .NET Multi-platform App UI (MAUI) - Explorer App for Windows 10 | Android
