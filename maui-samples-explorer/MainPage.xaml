@@ -3,43 +3,41 @@
              x:Class="maui_samples_explorer.MainPage"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
-    <ScrollView Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
-        <StackLayout>
-            <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,*">
-            
-                <Label Text="Hello, World!"
-                    Grid.Row="0"
-                    SemanticProperties.HeadingLevel="Level1"
-                    FontSize="32"
-                    HorizontalOptions="CenterAndExpand" />
-
-                <Label Text="Welcome to .NET Multi-platform App UI"
-                    Grid.Row="1"
-                    SemanticProperties.Hint="Counts the number of times you click" 
-                    FontSize="16"
-                    HorizontalOptions="CenterAndExpand" />
-
-                <Label Text="Current count: 0"
-                    Grid.Row="2"
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    FontSize="18"
-                    FontAttributes="Bold"
-                    x:Name="CounterLabel"
-                    HorizontalOptions="Center" />
-
-                <Button Text="Click me"
-                    Grid.Row="3"
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    Clicked="OnCounterClicked"
-                    HorizontalOptions="Center" />
-
-                <Image Grid.Row="4"
-                    Source="dotnet_bot.png"
-                    SemanticProperties.Description="Cute dotnet bot waving hi to you!"
-                    WidthRequest="300"
-                    HorizontalOptions="Center" />
-
-            </Grid>
-        </StackLayout>
+    <ScrollView Padding="{OnPlatform iOS='30,60,30,30', Default='0'}" BackgroundColor="#4ccba9">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Frame 
+            CornerRadius="6"
+                   Grid.Row="1"
+                   WidthRequest="60"
+                   HeightRequest="300"
+                    VerticalOptions="StartAndExpand"
+                    Margin="20">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,0">
+                        <GradientStop Color="White"
+                          Offset="0.1"/>
+                        <GradientStop Color="#192532"
+                          Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <StackLayout>
+                    <Label x:Name="labelPrecentage" FontSize="100"
+                           VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"/>
+                    <Image Source="batteries.svg" WidthRequest="250"></Image>
+                </StackLayout>
+            </Frame>
+            <Label Text="" 
+                Grid.Row="2"
+                FontSize="18"
+                HorizontalOptions="Center"
+                x:Name="BatteryLevel" />
+        </Grid>
     </ScrollView>
 </ContentPage>
